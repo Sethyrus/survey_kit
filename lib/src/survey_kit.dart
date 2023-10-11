@@ -23,6 +23,9 @@ class SurveyKit extends StatefulWidget {
   /// [ThemeData] to override the Theme of the subtree
   final ThemeData? themeData;
 
+  /// [Padding] to override the padding of the subtree
+  final EdgeInsetsGeometry padding;
+
   /// Function which is called after the results are collected
   final Function(SurveyResult) onResult;
 
@@ -45,6 +48,7 @@ class SurveyKit extends StatefulWidget {
     required this.task,
     required this.onResult,
     this.themeData,
+    this.padding = const EdgeInsets.all(0.0),
     this.surveyController,
     this.appBar,
     this.showProgress,
@@ -106,6 +110,7 @@ class _SurveyKitState extends State<SurveyKit> {
             length: widget.task.steps.length,
             onResult: widget.onResult,
             appBar: widget.appBar,
+            padding: widget.padding,
           ),
         ),
       ),
@@ -117,11 +122,13 @@ class SurveyPage extends StatefulWidget {
   final int length;
   final Widget Function(AppBarConfiguration appBarConfiguration)? appBar;
   final Function(SurveyResult) onResult;
+  final EdgeInsetsGeometry padding;
 
   const SurveyPage({
     required this.length,
     required this.onResult,
     this.appBar,
+    required this.padding,
   });
 
   @override
@@ -184,9 +191,13 @@ class _SurveyPageState extends State<SurveyPage>
                   .map(
                     (e) => _SurveyView(
                       id: e.stepIdentifier.id,
-                      createView: () => e.createView(
-                        questionResult: state.questionResults.firstWhereOrNull(
-                          (element) => element.id == e.stepIdentifier,
+                      createView: () => Padding(
+                        padding: widget.padding,
+                        child: e.createView(
+                          questionResult:
+                              state.questionResults.firstWhereOrNull(
+                            (element) => element.id == e.stepIdentifier,
+                          ),
                         ),
                       ),
                     ),
