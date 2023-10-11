@@ -167,7 +167,11 @@ class _SurveyPageState extends State<SurveyPage>
                       70.0,
                     ),
                     child: widget.appBar != null
-                        ? widget.appBar!.call(state.appBarConfiguration)
+                        ? widget.appBar!.call(
+                            state.appBarConfiguration.copyWith(
+                              context: context,
+                            ),
+                          )
                         : SurveyAppBar(
                             appBarConfiguration: state.appBarConfiguration,
                           ),
