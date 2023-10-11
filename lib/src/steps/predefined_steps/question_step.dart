@@ -55,7 +55,7 @@ class QuestionStep extends Step {
 
   QuestionStep({
     bool isOptional = false,
-    String buttonText = 'Next',
+    Widget buttonText = const Text('Next'),
     StepIdentifier? stepIdentifier,
     bool showAppBar = true,
     this.title = '',

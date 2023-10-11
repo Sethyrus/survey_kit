@@ -11,7 +11,7 @@ InstructionStep _$InstructionStepFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       text: json['text'] as String,
       isOptional: json['isOptional'] as bool? ?? false,
-      buttonText: json['buttonText'] as String? ?? 'Next',
+      buttonText: json['buttonText'] as Widget? ?? Text('Next'),
       stepIdentifier: json['stepIdentifier'] == null
           ? null
           : StepIdentifier.fromJson(

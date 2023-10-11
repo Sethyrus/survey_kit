@@ -14,7 +14,7 @@ void main() {
               InstructionStep(
                 title: 'Welcome to the\nQuickBird Studios\nHealth Survey',
                 text: 'Get ready for a bunch of super random questions!',
-                buttonText: 'Let\'s go!',
+                buttonText: Text('Let\'s go!'),
               ),
               QuestionStep(
                 title: 'How old are you?',
@@ -27,7 +27,7 @@ void main() {
                 stepIdentifier: StepIdentifier(id: '321'),
                 text: 'Thanks for taking the survey, we will contact you soon!',
                 title: 'Done!',
-                buttonText: 'Submit survey',
+                buttonText: Text('Submit survey'),
               ),
             ],
           ),

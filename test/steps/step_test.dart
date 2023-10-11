@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:survey_kit/src/steps/identifier/step_identifier.dart';
 import 'package:survey_kit/src/steps/predefined_steps/instruction_step.dart';
@@ -23,7 +24,7 @@ void main() {
       stepIdentifier: StepIdentifier(id: "1"),
       title: 'Welcome to the\nQuickBird Studios\nHealth Survey',
       text: 'Get ready for a bunch of super random questions!',
-      buttonText: 'Let\'s go!',
+      buttonText: Text('Let\'s go!'),
     );
 
     expect(step, jsonStep);

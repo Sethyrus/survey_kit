@@ -8,7 +8,7 @@ part of 'question_step.dart';
 
 QuestionStep _$QuestionStepFromJson(Map<String, dynamic> json) => QuestionStep(
       isOptional: json['isOptional'] as bool? ?? false,
-      buttonText: json['buttonText'] as String? ?? 'Next',
+      buttonText: json['buttonText'] as Widget? ?? Text('Next'),
       stepIdentifier: json['stepIdentifier'] == null
           ? null
           : StepIdentifier.fromJson(

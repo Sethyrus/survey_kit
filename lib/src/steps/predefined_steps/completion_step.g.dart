@@ -11,7 +11,7 @@ CompletionStep _$CompletionStepFromJson(Map<String, dynamic> json) =>
       isOptional: json['isOptional'] as bool? ?? false,
       stepIdentifier: StepIdentifier.fromJson(
           json['stepIdentifier'] as Map<String, dynamic>),
-      buttonText: json['buttonText'] as String? ?? 'Next',
+      buttonText: json['buttonText'] as Widget? ?? Text('Next'),
       showAppBar: json['showAppBar'] as bool? ?? true,
       title: json['title'] as String,
       text: json['text'] as String,

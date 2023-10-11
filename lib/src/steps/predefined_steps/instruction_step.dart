@@ -16,7 +16,7 @@ class InstructionStep extends Step {
     required this.title,
     required this.text,
     bool isOptional = false,
-    String buttonText = 'Next',
+    Widget buttonText = const Text('Next'),
     StepIdentifier? stepIdentifier,
     bool? canGoBack,
     bool? showProgress,
