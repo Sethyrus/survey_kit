@@ -156,8 +156,6 @@ class _SurveyPageState extends State<SurveyPage>
     return BlocConsumer<SurveyPresenter, SurveyState>(
       listenWhen: (previous, current) => previous != current,
       listener: (context, state) async {
-        // TODO debug log - eliminar
-        print(state);
         if (state is SurveyResultState) {
           widget.onResult.call(state.result);
         }
